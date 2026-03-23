@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F8F9FA"
+        tools:context=".ui.NewCarActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#1976D2"
+            app:title="Cadastrar Novo Carro"
+            app:titleTextColor="@android:color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            android:elevation="4dp" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/formScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Modelo do Carro (Ex: Civic)"
+                    android:background="@android:drawable/editbox_background_normal"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ano (Ex: 2025/2026)"
+                    android:inputType="text"
+                    android:background="@android:drawable/editbox_background_normal"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/profession"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Placa (Ex: ABC-1234)"
+                    android:background="@android:drawable/editbox_background_normal"
+                    android:padding="12dp"
+                    android:layout_marginBottom="12dp" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/imageUrl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="URL da Imagem"
+                    android:enabled="false"
+                    android:background="@android:drawable/editbox_background_normal"
+                    android:padding="12dp"
+                    android:textColor="#9E9E9E" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/takePictureCta"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@android:drawable/ic_menu_camera"
+                    android:backgroundTint="#607D8B"
+                    android:tint="@android:color/white"
+                    android:elevation="2dp" />
+
+                <ProgressBar
+                    android:id="@+id/loadImageProgress"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mapContent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:layout_constraintTop_toBottomOf="@id/formScroll"
+            app:layout_constraintBottom_toTopOf="@id/saveCta"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/saveCta"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="#4CAF50"
+            android:src="@android:drawable/ic_menu_save"
+            app:tint="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

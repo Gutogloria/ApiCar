@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "845322626901",
+    "project_id": "apicar-cd4ef",
+    "storage_bucket": "apicar-cd4ef.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845322626901:android:5b9e42a6d60a6c508671dc",
+        "android_client_info": {
+          "package_name": "com.example.apicar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBU2SycDKohl21DML8fWGflsWkjafMezzg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

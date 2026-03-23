@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ApiCar</string>
+    <string name="item_year">Ano: %1$s</string>
+    <string name="mrnu_loggout">Sair</string>
+</resources>

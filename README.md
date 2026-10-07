@@ -9,7 +9,7 @@ Desenvolvido durante as aulas da pós-graduação em Programação de Dispositiv
 2. **Lista de carros:** todos os carros cadastrados na API, com foto, nome e ano.
 3. **Novo carro:** formulário com nome, ano, placa, foto pela câmera e local escolhido no mapa.
 4. **Detalhes do carro:** informações do carro e local no mapa, com opções de editar e excluir.
-   
+
 ## Funcionalidades
 
 - **Login por SMS** com Firebase Authentication: o usuário informa o celular, recebe um código de 6 dígitos e entra no app.
@@ -45,6 +45,17 @@ Desenvolvido durante as aulas da pós-graduação em Programação de Dispositiv
 
 1. Clone o repositório e abra no **Android Studio**.
 2. Crie um projeto no **Firebase**, ative a autenticação por telefone e o Storage, e coloque o seu `google-services.json` em `app/`.
-3. Gere uma chave do **Google Maps SDK for Android** e informe no `AndroidManifest.xml`.
-4. Suba a API de carros na porta `3000` da sua máquina. O app acessa `http://10.0.2.2:3000/`, que é o endereço do computador visto de dentro do emulador.
+3. Gere uma chave do **Google Maps SDK for Android** e adicione no arquivo `local.properties`, na raiz do projeto (esse arquivo não vai para o Git):
+
+       MAPS_API_KEY=sua_chave_aqui
+
+4. O app consome uma API REST de carros (não incluída neste repositório) rodando na porta `3000` da sua máquina. O emulador acessa por `http://10.0.2.2:3000/`, que é o endereço do computador visto de dentro do emulador. Endpoints esperados:
+   - `GET /car`: lista de carros
+   - `GET /car/{id}`: um carro (retornado dentro de uma lista)
+   - `POST /car`, `PATCH /car/{id}`, `DELETE /car/{id}`
+
+   Formato de um carro:
+
+       { "id": "1", "name": "Fusca", "year": "1975", "licence": "ABC-1234", "imageUrl": "https://...", "place": { "lat": -27.59, "long": -48.54 } }
+
 5. Rode o app no emulador (Android 7.0, API 24, ou superior).
